@@ -19,9 +19,9 @@ React + TypeScript frontend for RevenueOS.
 ## Running locally
 
 ```bash
-npm install
+yarn install
 cp .env.example .env   # leave VITE_API_URL empty to use the dev proxy
-npm run dev
+yarn dev
 ```
 
 The app runs at `http://localhost:5173`. The Vite dev server proxies `/api` to
@@ -31,10 +31,11 @@ Sign in with the seeded demo account: **admin@demo.io / Password123!**
 
 ## Scripts
 
-- `npm run dev` — start the dev server
-- `npm run build` — type-check and build for production
-- `npm run lint` — lint the source
-- `npm run format` — format with Prettier
+- `yarn dev` — start the dev server
+- `yarn build` — type-check and build for production
+- `yarn generate` — regenerate the API client/hooks from `openapi.json` (Kubb)
+- `yarn lint` — lint the source
+- `yarn format` — format with Prettier
 
 ## Structure
 
