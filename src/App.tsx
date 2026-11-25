@@ -6,6 +6,8 @@ import RolesPage from '@/features/roles/RolesPage'
 import ClientsPage from '@/features/clients/ClientsPage'
 import ProjectsPage from '@/features/projects/ProjectsPage'
 import TasksPage from '@/features/tasks/TasksPage'
+import EmployeesPage from '@/features/employees/EmployeesPage'
+import DepartmentsPage from '@/features/departments/DepartmentsPage'
 import AppLayout from '@/components/layout/AppLayout'
 import ProtectedRoute from '@/routes/ProtectedRoute'
 
@@ -19,6 +21,8 @@ export default function App() {
           <Route path="/clients" element={<ClientsPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/tasks" element={<TasksPage />} />
+          <Route path="/employees" element={<EmployeesPage />} />
+          <Route path="/departments" element={<DepartmentsPage />} />
           <Route path="/users" element={<UsersPage />} />
           <Route path="/roles" element={<RolesPage />} />
         </Route>
