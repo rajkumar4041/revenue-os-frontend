@@ -2,7 +2,9 @@ import { NavLink, Outlet } from 'react-router-dom'
 import {
   Bell,
   Building2,
+  CheckCheck,
   CheckSquare,
+  Clock,
   FolderKanban,
   LayoutDashboard,
   Network,
@@ -41,6 +43,13 @@ const NAV_GROUPS: NavGroup[] = [
       { to: '/clients', label: 'Clients', icon: Building2, permission: 'CLIENT_VIEW' },
       { to: '/projects', label: 'Projects', icon: FolderKanban, permission: 'PROJECT_VIEW' },
       { to: '/tasks', label: 'Tasks', icon: CheckSquare, permission: 'TASK_VIEW' },
+    ],
+  },
+  {
+    label: 'Time',
+    items: [
+      { to: '/timesheets', label: 'Timesheets', icon: Clock, permission: 'TIMESHEET_SUBMIT' },
+      { to: '/approvals', label: 'Approvals', icon: CheckCheck, permission: 'TIMESHEET_APPROVE' },
     ],
   },
   {
