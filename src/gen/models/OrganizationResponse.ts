@@ -41,4 +41,8 @@ export type OrganizationResponse = {
      * @type string | undefined
     */
     subscriptionPlan?: OrganizationResponseSubscriptionPlanEnum;
+    /**
+     * @type string | undefined, date
+    */
+    trialEndsAt?: string;
 };
