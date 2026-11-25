@@ -82,7 +82,7 @@ const NAV_GROUPS: NavGroup[] = [
     label: 'People',
     items: [
       { to: '/employees', label: 'Employees', icon: UserCog, permission: 'EMPLOYEE_VIEW' },
-      { to: '/departments', label: 'Departments', icon: Network, permission: 'EMPLOYEE_VIEW' },
+      { to: '/teams', label: 'Teams', icon: Network, permission: 'EMPLOYEE_VIEW' },
     ],
   },
   {
