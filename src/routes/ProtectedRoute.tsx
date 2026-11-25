@@ -22,9 +22,12 @@ export default function ProtectedRoute() {
     retry: false,
   })
 
+  // Depend only on the fetched data (a stable reference). `setUser` is a fresh
+  // closure every render, so including it here would loop endlessly.
   useEffect(() => {
     if (meQuery.data) setUser(meQuery.data)
-  }, [meQuery.data, setUser])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [meQuery.data])
 
   if (!hasToken) {
     return <Navigate to="/login" state={{ from: location.pathname }} replace />
