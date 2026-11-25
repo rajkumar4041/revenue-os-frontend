@@ -1,0 +1,1 @@
+{"required":["amount","incurredOn"],"type":"object","properties":{"projectId":{"type":"string","format":"uuid"},"category":{"type":"string","enum":["TRAVEL","SOFTWARE","EQUIPMENT","MARKETING","CONTRACTOR","OTHER"]},"amount":{"type":"number"},"incurredOn":{"type":"string","format":"date"},"description":{"type":"string"}},"x-readme-ref-name":"UpdateExpenseRequest"}
