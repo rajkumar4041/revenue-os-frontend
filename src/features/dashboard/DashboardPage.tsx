@@ -1,58 +1,44 @@
-import { useNavigate } from 'react-router-dom'
-import { LogOut } from 'lucide-react'
 import { useAuth } from '@/store/auth'
-import { logoutRequest } from '@/api/auth'
-import { clearTokens, getRefreshToken } from '@/lib/tokenStorage'
-import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
 export default function DashboardPage() {
-  const navigate = useNavigate()
-  const { user, setUser } = useAuth()
-
-  const handleLogout = async () => {
-    const refreshToken = getRefreshToken()
-    if (refreshToken) {
-      await logoutRequest(refreshToken).catch(() => undefined)
-    }
-    clearTokens()
-    setUser(null)
-    navigate('/login', { replace: true })
-  }
+  const { user } = useAuth()
 
   return (
-    <div className="min-h-screen bg-muted/40">
-      <header className="flex items-center justify-between border-b bg-background px-6 py-4">
-        <span className="text-lg font-semibold">RevenueOS</span>
-        <div className="flex items-center gap-4">
-          <span className="text-sm text-muted-foreground">{user?.email}</span>
-          <Button variant="outline" size="sm" onClick={handleLogout}>
-            <LogOut className="h-4 w-4" />
-            Sign out
-          </Button>
-        </div>
-      </header>
+    <div className="space-y-6">
+      <div>
+        <h1 className="text-2xl font-semibold tracking-tight">Welcome back, {user?.name}</h1>
+        <p className="text-sm text-muted-foreground">Here’s a quick overview of your access.</p>
+      </div>
 
-      <main className="mx-auto max-w-3xl px-6 py-10">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <Card>
           <CardHeader>
-            <CardTitle>Welcome back, {user?.name}</CardTitle>
+            <CardTitle className="text-base">Roles</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-3 text-sm">
-            <div>
-              <span className="text-muted-foreground">Roles: </span>
-              {user?.roles.join(', ') || '—'}
-            </div>
-            <div>
-              <span className="text-muted-foreground">Permissions: </span>
-              {user?.permissions.length ?? 0} granted
-            </div>
-            <p className="pt-2 text-muted-foreground">
-              You are signed in. The rest of RevenueOS is coming in the next phases.
-            </p>
+          <CardContent className="text-sm text-muted-foreground">
+            {user?.roles.join(', ') || '—'}
           </CardContent>
         </Card>
-      </main>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-base">Permissions</CardTitle>
+          </CardHeader>
+          <CardContent className="text-3xl font-semibold">
+            {user?.permissions.length ?? 0}
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-base">Organization</CardTitle>
+          </CardHeader>
+          <CardContent className="truncate text-sm text-muted-foreground">
+            {user?.organizationId}
+          </CardContent>
+        </Card>
+      </div>
     </div>
   )
 }

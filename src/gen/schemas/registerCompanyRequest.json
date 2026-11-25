@@ -1,0 +1,1 @@
+{"required":["adminName","companyName","email","password"],"type":"object","properties":{"companyName":{"type":"string"},"adminName":{"type":"string"},"email":{"type":"string"},"password":{"maxLength":2147483647,"minLength":8,"type":"string"}},"x-readme-ref-name":"RegisterCompanyRequest"}
