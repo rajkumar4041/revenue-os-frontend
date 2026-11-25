@@ -1,0 +1,1 @@
+{"required":["amount","paidOn"],"type":"object","properties":{"amount":{"type":"number"},"paidOn":{"type":"string","format":"date"},"method":{"type":"string","enum":["BANK_TRANSFER","CARD","CASH","CHEQUE","OTHER"]},"reference":{"type":"string"}},"x-readme-ref-name":"RecordPaymentRequest"}
