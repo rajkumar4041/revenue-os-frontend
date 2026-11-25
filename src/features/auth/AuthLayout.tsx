@@ -5,16 +5,16 @@ import { cn } from '@/lib/utils'
 
 const HERO_DARK = {
   background:
-    'radial-gradient(60% 50% at 75% 15%, rgba(99,102,241,0.28), transparent 70%),' +
-    'radial-gradient(55% 55% at 15% 85%, rgba(217,70,239,0.20), transparent 70%),' +
+    'radial-gradient(50% 60% at 80% 10%, rgba(99,102,241,0.30), transparent 70%),' +
+    'radial-gradient(45% 55% at 10% 90%, rgba(217,70,239,0.22), transparent 70%),' +
     '#09090b',
 }
 
 const HERO_LIGHT = {
   background:
-    'radial-gradient(60% 50% at 75% 15%, rgba(99,102,241,0.18), transparent 70%),' +
-    'radial-gradient(55% 55% at 15% 85%, rgba(217,70,239,0.12), transparent 70%),' +
-    '#f4f4f5',
+    'radial-gradient(50% 60% at 80% 10%, rgba(99,102,241,0.16), transparent 70%),' +
+    'radial-gradient(45% 55% at 10% 90%, rgba(217,70,239,0.10), transparent 70%),' +
+    '#fafafa',
 }
 
 export function AuthLayout({ children }: { children: ReactNode }) {
@@ -22,20 +22,25 @@ export function AuthLayout({ children }: { children: ReactNode }) {
   const dark = theme === 'dark'
 
   return (
-    <div className="flex min-h-screen bg-background text-foreground">
-      <div
-        className={cn('relative hidden flex-1 overflow-hidden lg:block', dark ? 'text-zinc-100' : 'text-zinc-900')}
-        style={dark ? HERO_DARK : HERO_LIGHT}
-      >
-        <div className="relative flex h-full flex-col justify-between p-12">
-          <div className="flex items-center gap-2.5">
-            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">
-              R
-            </span>
-            <span className="text-base font-semibold">RevenueOS</span>
-          </div>
+    <div
+      className={cn('relative min-h-screen overflow-hidden', dark ? 'text-zinc-100' : 'text-zinc-900')}
+      style={dark ? HERO_DARK : HERO_LIGHT}
+    >
+      {/* Top bar */}
+      <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between px-6 py-5">
+        <div className="flex items-center gap-2.5">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">
+            R
+          </span>
+          <span className="text-base font-semibold">RevenueOS</span>
+        </div>
+        <ThemeToggle />
+      </div>
 
-          <div className="max-w-xl">
+      {/* Centered content: headline left, card just right of centre */}
+      <div className="mx-auto flex min-h-screen max-w-6xl items-center px-6">
+        <div className="grid w-full items-center gap-12 lg:grid-cols-[1.1fr_440px]">
+          <div className="hidden lg:block">
             <span
               className={cn(
                 'inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs',
@@ -60,17 +65,12 @@ export function AuthLayout({ children }: { children: ReactNode }) {
             </p>
           </div>
 
-          <p className={cn('text-xs uppercase tracking-[0.2em]', dark ? 'text-zinc-500' : 'text-zinc-500')}>
-            Clients · Projects · Timesheets · Invoices · Revenue
-          </p>
+          <div className="flex justify-center lg:justify-start">
+            <div className="w-full max-w-md rounded-2xl border border-border/60 bg-card p-6 text-card-foreground shadow-2xl">
+              {children}
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div className="relative flex w-full items-center justify-center p-6 lg:w-[520px]">
-        <div className="absolute right-4 top-4">
-          <ThemeToggle />
-        </div>
-        <div className="w-full max-w-sm">{children}</div>
       </div>
     </div>
   )
