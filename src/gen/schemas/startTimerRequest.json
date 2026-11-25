@@ -1,0 +1,1 @@
+{"required":["projectId"],"type":"object","properties":{"projectId":{"type":"string","format":"uuid"},"taskId":{"type":"string","format":"uuid"},"description":{"type":"string"}},"x-readme-ref-name":"StartTimerRequest"}
