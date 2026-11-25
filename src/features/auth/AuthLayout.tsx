@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { ThemeToggle } from '@/components/layout/ThemeToggle'
 
 const HERO_BG = {
   background:
@@ -9,8 +10,9 @@ const HERO_BG = {
 
 export function AuthLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="dark flex min-h-screen bg-background text-foreground">
-      <div className="relative hidden flex-1 overflow-hidden lg:block" style={HERO_BG}>
+    <div className="flex min-h-screen bg-background text-foreground">
+      {/* Branded hero stays dark in both themes; the form side follows the theme. */}
+      <div className="relative hidden flex-1 overflow-hidden text-zinc-100 lg:block" style={HERO_BG}>
         <div className="relative flex h-full flex-col justify-between p-12">
           <div className="flex items-center gap-2.5">
             <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">
@@ -45,7 +47,10 @@ export function AuthLayout({ children }: { children: ReactNode }) {
         </div>
       </div>
 
-      <div className="flex w-full items-center justify-center p-6 lg:w-[520px]">
+      <div className="relative flex w-full items-center justify-center p-6 lg:w-[520px]">
+        <div className="absolute right-4 top-4">
+          <ThemeToggle />
+        </div>
         <div className="w-full max-w-sm">{children}</div>
       </div>
     </div>
