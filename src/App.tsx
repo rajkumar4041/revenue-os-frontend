@@ -11,7 +11,7 @@ import ClientsPage from '@/features/clients/ClientsPage'
 import ProjectsPage from '@/features/projects/ProjectsPage'
 import TasksPage from '@/features/tasks/TasksPage'
 import EmployeesPage from '@/features/employees/EmployeesPage'
-import DepartmentsPage from '@/features/departments/DepartmentsPage'
+import TeamsPage from '@/features/teams/TeamsPage'
 import TimesheetsPage from '@/features/timesheets/TimesheetsPage'
 import ApprovalsInboxPage from '@/features/approvals/ApprovalsInboxPage'
 import InvoicesPage from '@/features/invoices/InvoicesPage'
@@ -42,7 +42,7 @@ export default function App() {
           <Route path="/invoices" element={<InvoicesPage />} />
           <Route path="/expenses" element={<ExpensesPage />} />
           <Route path="/employees" element={<EmployeesPage />} />
-          <Route path="/departments" element={<DepartmentsPage />} />
+          <Route path="/teams" element={<TeamsPage />} />
           <Route path="/users" element={<UsersPage />} />
           <Route path="/roles" element={<RolesPage />} />
         </Route>

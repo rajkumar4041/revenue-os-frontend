@@ -64,7 +64,7 @@ export function CommandPalette({ open, onOpenChange }: { open: boolean; onOpenCh
     { id: 'timesheets', label: 'Go to Timesheets', icon: Clock, perform: go('/timesheets'), permission: 'TIMESHEET_SUBMIT' },
     { id: 'approvals', label: 'Go to Approvals', icon: CheckCheck, perform: go('/approvals'), permission: 'TIMESHEET_APPROVE' },
     { id: 'employees', label: 'Go to Employees', icon: UserCog, perform: go('/employees'), permission: 'EMPLOYEE_VIEW' },
-    { id: 'departments', label: 'Go to Departments', icon: Network, perform: go('/departments'), permission: 'EMPLOYEE_VIEW' },
+    { id: 'teams', label: 'Go to Teams', icon: Network, perform: go('/teams'), permission: 'EMPLOYEE_VIEW' },
     { id: 'users', label: 'Go to Users', icon: Users, perform: go('/users'), permission: 'USER_MANAGE' },
     { id: 'roles', label: 'Go to Roles', icon: ShieldCheck, perform: go('/roles'), permission: 'ROLE_MANAGE' },
     { id: 'theme', label: 'Toggle theme', icon: Moon, perform: () => { toggle(); close() } },

@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { useQueryClient } from '@tanstack/react-query'
 import { Loader2 } from 'lucide-react'
-import { useListDepartments, useOnboardEmployee, useUpdateEmployee } from '@/gen/hooks'
+import { useListTeams, useOnboardEmployee, useUpdateEmployee } from '@/gen/hooks'
 import type { EmployeeResponse } from '@/gen/models/EmployeeResponse'
 import type { OnboardEmployeeRequest } from '@/gen/models/OnboardEmployeeRequest'
 import type { UpdateEmployeeRequest } from '@/gen/models/UpdateEmployeeRequest'
@@ -26,7 +26,7 @@ import {
 const schema = z.object({
   fullName: z.string().min(1, 'Name is required'),
   email: z.string().min(1, 'Email is required').email('Enter a valid email'),
-  departmentId: z.string().optional(),
+  teamId: z.string().optional(),
   designation: z.string().optional(),
   employmentType: z.string(),
   employmentStatus: z.string().optional(),
@@ -46,7 +46,7 @@ interface Props {
 export function EmployeeFormDialog({ open, onOpenChange, employee }: Props) {
   const queryClient = useQueryClient()
   const isEdit = !!employee
-  const departmentsQuery = useListDepartments({ query: { enabled: open } })
+  const teamsQuery = useListTeams({ query: { enabled: open } })
   const onboard = useOnboardEmployee()
   const update = useUpdateEmployee()
   const pending = onboard.isPending || update.isPending
@@ -65,7 +65,7 @@ export function EmployeeFormDialog({ open, onOpenChange, employee }: Props) {
     reset({
       fullName: employee?.fullName ?? '',
       email: employee?.email ?? '',
-      departmentId: employee?.departmentId ?? '',
+      teamId: employee?.teamId ?? '',
       designation: employee?.designation ?? '',
       employmentType: employee?.employmentType ?? 'FULL_TIME',
       employmentStatus: employee?.employmentStatus ?? 'ONBOARDING',
@@ -89,7 +89,7 @@ export function EmployeeFormDialog({ open, onOpenChange, employee }: Props) {
     const shared = {
       fullName: values.fullName,
       email: values.email,
-      departmentId: values.departmentId || undefined,
+      teamId: values.teamId || undefined,
       designation: values.designation || undefined,
       employmentType: values.employmentType as OnboardEmployeeRequest['employmentType'],
       costRate: values.costRate ? Number(values.costRate) : undefined,
@@ -125,12 +125,12 @@ export function EmployeeFormDialog({ open, onOpenChange, employee }: Props) {
           <Field label="Email" error={errors.email?.message}>
             <Input type="email" {...register('email')} />
           </Field>
-          <Field label="Department">
-            <Select {...register('departmentId')}>
+          <Field label="Team">
+            <Select {...register('teamId')}>
               <option value="">— None —</option>
-              {departmentsQuery.data?.map((dept) => (
-                <option key={dept.id} value={dept.id}>
-                  {dept.name}
+              {teamsQuery.data?.map((team) => (
+                <option key={team.id} value={team.id}>
+                  {team.name}
                 </option>
               ))}
             </Select>
