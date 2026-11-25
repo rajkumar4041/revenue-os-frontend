@@ -9,7 +9,7 @@ import TasksPage from '@/features/tasks/TasksPage'
 import EmployeesPage from '@/features/employees/EmployeesPage'
 import DepartmentsPage from '@/features/departments/DepartmentsPage'
 import TimesheetsPage from '@/features/timesheets/TimesheetsPage'
-import ApprovalsPage from '@/features/timesheets/ApprovalsPage'
+import ApprovalsInboxPage from '@/features/approvals/ApprovalsInboxPage'
 import InvoicesPage from '@/features/invoices/InvoicesPage'
 import ExpensesPage from '@/features/expenses/ExpensesPage'
 import LeadsPage from '@/features/sales/LeadsPage'
@@ -30,7 +30,7 @@ export default function App() {
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/tasks" element={<TasksPage />} />
           <Route path="/timesheets" element={<TimesheetsPage />} />
-          <Route path="/approvals" element={<ApprovalsPage />} />
+          <Route path="/approvals" element={<ApprovalsInboxPage />} />
           <Route path="/invoices" element={<InvoicesPage />} />
           <Route path="/expenses" element={<ExpensesPage />} />
           <Route path="/employees" element={<EmployeesPage />} />
