@@ -6,6 +6,7 @@ import {
   CheckCheck,
   CheckSquare,
   Clock,
+  FileText,
   FolderKanban,
   LayoutDashboard,
   Network,
@@ -53,6 +54,10 @@ const NAV_GROUPS: NavGroup[] = [
       { to: '/timesheets', label: 'Timesheets', icon: Clock, permission: 'TIMESHEET_SUBMIT' },
       { to: '/approvals', label: 'Approvals', icon: CheckCheck, permission: 'TIMESHEET_APPROVE' },
     ],
+  },
+  {
+    label: 'Finance',
+    items: [{ to: '/invoices', label: 'Invoices', icon: FileText, permission: 'INVOICE_VIEW' }],
   },
   {
     label: 'People',
