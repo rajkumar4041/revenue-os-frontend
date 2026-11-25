@@ -11,6 +11,7 @@ import DepartmentsPage from '@/features/departments/DepartmentsPage'
 import TimesheetsPage from '@/features/timesheets/TimesheetsPage'
 import ApprovalsPage from '@/features/timesheets/ApprovalsPage'
 import InvoicesPage from '@/features/invoices/InvoicesPage'
+import ExpensesPage from '@/features/expenses/ExpensesPage'
 import AppLayout from '@/components/layout/AppLayout'
 import ProtectedRoute from '@/routes/ProtectedRoute'
 
@@ -27,6 +28,7 @@ export default function App() {
           <Route path="/timesheets" element={<TimesheetsPage />} />
           <Route path="/approvals" element={<ApprovalsPage />} />
           <Route path="/invoices" element={<InvoicesPage />} />
+          <Route path="/expenses" element={<ExpensesPage />} />
           <Route path="/employees" element={<EmployeesPage />} />
           <Route path="/departments" element={<DepartmentsPage />} />
           <Route path="/users" element={<UsersPage />} />
