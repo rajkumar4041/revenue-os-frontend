@@ -1,18 +1,32 @@
 import type { ReactNode } from 'react'
 import { ThemeToggle } from '@/components/layout/ThemeToggle'
+import { useTheme } from '@/store/theme'
+import { cn } from '@/lib/utils'
 
-const HERO_BG = {
+const HERO_DARK = {
   background:
     'radial-gradient(60% 50% at 75% 15%, rgba(99,102,241,0.28), transparent 70%),' +
     'radial-gradient(55% 55% at 15% 85%, rgba(217,70,239,0.20), transparent 70%),' +
     '#09090b',
 }
 
+const HERO_LIGHT = {
+  background:
+    'radial-gradient(60% 50% at 75% 15%, rgba(99,102,241,0.18), transparent 70%),' +
+    'radial-gradient(55% 55% at 15% 85%, rgba(217,70,239,0.12), transparent 70%),' +
+    '#f4f4f5',
+}
+
 export function AuthLayout({ children }: { children: ReactNode }) {
+  const { theme } = useTheme()
+  const dark = theme === 'dark'
+
   return (
     <div className="flex min-h-screen bg-background text-foreground">
-      {/* Branded hero stays dark in both themes; the form side follows the theme. */}
-      <div className="relative hidden flex-1 overflow-hidden text-zinc-100 lg:block" style={HERO_BG}>
+      <div
+        className={cn('relative hidden flex-1 overflow-hidden lg:block', dark ? 'text-zinc-100' : 'text-zinc-900')}
+        style={dark ? HERO_DARK : HERO_LIGHT}
+      >
         <div className="relative flex h-full flex-col justify-between p-12">
           <div className="flex items-center gap-2.5">
             <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">
@@ -22,26 +36,31 @@ export function AuthLayout({ children }: { children: ReactNode }) {
           </div>
 
           <div className="max-w-xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-zinc-300">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            <span
+              className={cn(
+                'inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs',
+                dark ? 'border-white/10 bg-white/5 text-zinc-300' : 'border-black/10 bg-black/5 text-zinc-600',
+              )}
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
               Teams run their business on RevenueOS
             </span>
             <h1 className="mt-6 text-5xl font-semibold leading-[1.1] tracking-tight">
               The platform to
               <br />
               run your{' '}
-              <span className="bg-gradient-to-r from-indigo-400 via-fuchsia-400 to-orange-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-indigo-500 via-fuchsia-500 to-orange-500 bg-clip-text text-transparent">
                 company
               </span>
               .
             </h1>
-            <p className="mt-5 max-w-md text-zinc-400">
+            <p className={cn('mt-5 max-w-md', dark ? 'text-zinc-400' : 'text-zinc-600')}>
               CRM, projects, timesheets, billing and revenue — one modern workspace. Production-ready
               from the day you sign up.
             </p>
           </div>
 
-          <p className="text-xs uppercase tracking-[0.2em] text-zinc-500">
+          <p className={cn('text-xs uppercase tracking-[0.2em]', dark ? 'text-zinc-500' : 'text-zinc-500')}>
             Clients · Projects · Timesheets · Invoices · Revenue
           </p>
         </div>
