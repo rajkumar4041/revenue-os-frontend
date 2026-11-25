@@ -8,6 +8,8 @@ import ProjectsPage from '@/features/projects/ProjectsPage'
 import TasksPage from '@/features/tasks/TasksPage'
 import EmployeesPage from '@/features/employees/EmployeesPage'
 import DepartmentsPage from '@/features/departments/DepartmentsPage'
+import TimesheetsPage from '@/features/timesheets/TimesheetsPage'
+import ApprovalsPage from '@/features/timesheets/ApprovalsPage'
 import AppLayout from '@/components/layout/AppLayout'
 import ProtectedRoute from '@/routes/ProtectedRoute'
 
@@ -21,6 +23,8 @@ export default function App() {
           <Route path="/clients" element={<ClientsPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/tasks" element={<TasksPage />} />
+          <Route path="/timesheets" element={<TimesheetsPage />} />
+          <Route path="/approvals" element={<ApprovalsPage />} />
           <Route path="/employees" element={<EmployeesPage />} />
           <Route path="/departments" element={<DepartmentsPage />} />
           <Route path="/users" element={<UsersPage />} />
