@@ -4,7 +4,7 @@
 */
 
 
-export type DepartmentResponse = {
+export type TeamResponse = {
     /**
      * @type string | undefined, uuid
     */

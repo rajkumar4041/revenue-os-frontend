@@ -27,7 +27,7 @@ export function listEmployeesSuspenseQueryOptions(params?: ListEmployeesQueryPar
 }
 
 /**
- * @summary List employees, optionally filtered by status and department
+ * @summary List employees, optionally filtered by status and team
  * {@link /api/v1/employees}
  */
 export function useListEmployeesSuspense<TData = ListEmployeesQueryResponse, TQueryKey extends QueryKey = ListEmployeesSuspenseQueryKey>(params?: ListEmployeesQueryParams, options: 

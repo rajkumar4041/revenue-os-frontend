@@ -1,1 +1,0 @@
-{"type":"object","properties":{"id":{"type":"string","format":"uuid"},"name":{"type":"string"},"managerUserId":{"type":"string","format":"uuid"}},"x-readme-ref-name":"DepartmentResponse"}
