@@ -23,7 +23,7 @@ export type ListEmployeesQueryParams = {
     /**
      * @type string | undefined, uuid
     */
-    departmentId?: string;
+    teamId?: string;
     /**
      * @description Zero-based page index (0..N)
      * @minLength 0

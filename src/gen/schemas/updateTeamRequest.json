@@ -1,0 +1,1 @@
+{"required":["name"],"type":"object","properties":{"name":{"type":"string"},"managerUserId":{"type":"string","format":"uuid"}},"x-readme-ref-name":"UpdateTeamRequest"}

@@ -4,7 +4,7 @@
 */
 
 
-export type CreateDepartmentRequest = {
+export type UpdateTeamRequest = {
     /**
      * @type string
     */

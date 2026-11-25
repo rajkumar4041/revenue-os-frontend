@@ -43,7 +43,7 @@ export type EmployeeResponse = {
     /**
      * @type string | undefined, uuid
     */
-    departmentId?: string;
+    teamId?: string;
     /**
      * @type string | undefined
     */

@@ -13,7 +13,7 @@ function getListEmployeesUrl() {
 }
 
 /**
- * @summary List employees, optionally filtered by status and department
+ * @summary List employees, optionally filtered by status and team
  * {@link /api/v1/employees}
  */
 export async function listEmployees(params?: ListEmployeesQueryParams, config: Partial<RequestConfig> & { client?: typeof fetch } = {}) {
