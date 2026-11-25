@@ -1,0 +1,1 @@
+{"type":"object","properties":{"id":{"type":"string","format":"uuid"},"code":{"type":"string"},"category":{"type":"string"},"description":{"type":"string"}},"x-readme-ref-name":"PermissionResponse"}

@@ -1,0 +1,1 @@
+{"required":["email","name","password"],"type":"object","properties":{"name":{"type":"string"},"email":{"type":"string"},"password":{"maxLength":2147483647,"minLength":8,"type":"string"},"roleIds":{"uniqueItems":true,"type":"array","items":{"type":"string","format":"uuid"}}},"x-readme-ref-name":"CreateUserRequest"}

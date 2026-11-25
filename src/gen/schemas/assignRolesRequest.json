@@ -1,0 +1,1 @@
+{"required":["roleIds"],"type":"object","properties":{"roleIds":{"uniqueItems":true,"type":"array","items":{"type":"string","format":"uuid"}}},"x-readme-ref-name":"AssignRolesRequest"}

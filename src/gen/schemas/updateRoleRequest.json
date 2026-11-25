@@ -1,0 +1,1 @@
+{"type":"object","properties":{"description":{"maxLength":255,"minLength":0,"type":"string"},"permissionCodes":{"uniqueItems":true,"type":"array","items":{"type":"string"}}},"x-readme-ref-name":"UpdateRoleRequest"}
