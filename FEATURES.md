@@ -18,7 +18,8 @@ Legend: ✅ shipped · 🟡 in progress · ⬜ planned
 - ✅ User management (invite, edit, assign roles)
 - ✅ Organization settings
 - ✅ Tenant isolation — org id taken from the token, never trusted from the client
-- ⬜ Audit log + global activity timeline
+- ✅ Audit log + global activity timeline
+- ✅ Transactional email (password reset, welcome) via SMTP
 - ⬜ In-app notifications
 
 ## People / HR
@@ -30,9 +31,9 @@ Legend: ✅ shipped · 🟡 in progress · ⬜ planned
 ## CRM
 - ✅ Clients (full CRM record: company, industry, contacts, contract terms, account manager)
 - ✅ Client search, status, archive
-- ⬜ Leads
-- ⬜ Opportunities / sales pipeline (Kanban deal stages)
-- ⬜ Won-deal → client handover workflow
+- ✅ Leads (CRUD + convert to opportunity)
+- ✅ Opportunities / sales pipeline (stage board, move stage)
+- ✅ Won-deal → client handover workflow
 
 ## Projects & Delivery
 - ✅ Projects (code, client, manager, members, budget, billing type, status, priority)
@@ -50,24 +51,24 @@ Legend: ✅ shipped · 🟡 in progress · ⬜ planned
 
 ## Billing & Finance
 - ⬜ Contracts (fixed / hourly / retainer / recurring)
-- ⬜ Invoices from approved billable hours or fixed fees
-- ⬜ Payments & collection tracking
-- ⬜ Expenses & project costs
-- ⬜ Invoiced vs collected vs recognized revenue (kept strictly separate)
+- ✅ Invoices (line items, draft → sent → partially/paid, void)
+- ✅ Payments & collection tracking
+- ✅ Expenses & project costs (with approval)
+- ✅ Invoiced vs collected vs outstanding (kept strictly separate)
 
 ## Analytics & Reporting
 - ✅ Dashboard with live metric cards (clients, projects, tasks, team) + task completion
-- ⬜ Executive / manager / employee role dashboards
-- ⬜ Revenue, utilization and profitability charts (Recharts)
+- ✅ Revenue summary + invoiced-vs-collected chart (Recharts)
+- 🟡 Executive / manager / employee role dashboards
 - ⬜ Reports with CSV / Excel / PDF export
 
 ## Unique / modern touches
 - ✅ Live work timer with real-time elapsed display
 - ✅ Dark mode with a refined neutral + indigo theme
 - ✅ Fully type-safe, auto-generated API client + hooks (OpenAPI → Kubb)
-- 🟡 ⌘K command palette — keyboard-driven navigation + quick actions
-- ⬜ Smart approvals inbox — all approvals (timesheets, expenses, budgets) in one place with bulk actions
-- ⬜ Global activity timeline backed by the audit log
+- ✅ ⌘K command palette — keyboard-driven navigation + quick actions
+- ✅ Smart approvals inbox — timesheets + expenses in one place with bulk actions
+- ✅ Global activity timeline backed by the audit log
 - ⬜ Saved views + inline filters across tables
 
 ---
