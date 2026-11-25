@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import {
   Bell,
@@ -19,6 +20,7 @@ import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { ThemeToggle } from './ThemeToggle'
 import { UserMenu } from './UserMenu'
+import { CommandPalette } from './CommandPalette'
 
 interface NavItem {
   to: string
@@ -70,6 +72,18 @@ const NAV_GROUPS: NavGroup[] = [
 
 export default function AppLayout() {
   const { hasPermission } = useAuth()
+  const [paletteOpen, setPaletteOpen] = useState(false)
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault()
+        setPaletteOpen((o) => !o)
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
 
   const visibleGroups = NAV_GROUPS.map((group) => ({
     ...group,
@@ -78,6 +92,7 @@ export default function AppLayout() {
 
   return (
     <div className="flex min-h-screen bg-background">
+      <CommandPalette open={paletteOpen} onOpenChange={setPaletteOpen} />
       <aside className="fixed inset-y-0 left-0 hidden w-64 flex-col border-r border-sidebar-border bg-sidebar md:flex">
         <div className="flex h-16 items-center gap-2.5 px-5">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">
@@ -130,6 +145,7 @@ export default function AppLayout() {
 
           <button
             type="button"
+            onClick={() => setPaletteOpen(true)}
             className="hidden items-center gap-2 rounded-lg border bg-muted/40 px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted md:flex md:w-72"
           >
             <Search className="h-4 w-4" />
