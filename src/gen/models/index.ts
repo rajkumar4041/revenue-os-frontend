@@ -6,6 +6,7 @@ export type { ApproveTimesheetPathParams, ApproveTimesheet200, ApproveTimesheetM
 export type { ArchiveClientPathParams, ArchiveClient200, ArchiveClientMutationResponse, ArchiveClientMutation } from "./ArchiveClient.ts";
 export type { AssignRolesRequest } from "./AssignRolesRequest.ts";
 export type { AssignUserRolesPathParams, AssignUserRoles200, AssignUserRolesMutationRequest, AssignUserRolesMutationResponse, AssignUserRolesMutation } from "./AssignUserRoles.ts";
+export type { AuditResponse } from "./AuditResponse.ts";
 export type { AuthResponse } from "./AuthResponse.ts";
 export type { AuthUser } from "./AuthUser.ts";
 export type { ClientResponseClientTypeEnum, ClientResponseStatusEnum, ClientResponse } from "./ClientResponse.ts";
@@ -56,6 +57,7 @@ export type { InvoiceItemResponse } from "./InvoiceItemResponse.ts";
 export type { InvoiceResponseStatusEnum, InvoiceResponse } from "./InvoiceResponse.ts";
 export type { LeadRequestStatusEnum, LeadRequest } from "./LeadRequest.ts";
 export type { LeadResponseStatusEnum, LeadResponse } from "./LeadResponse.ts";
+export type { ListActivityQueryParams, ListActivity200, ListActivityQueryResponse, ListActivityQuery } from "./ListActivity.ts";
 export type { ListClientsQueryParams, ListClients200, ListClientsQueryResponse, ListClientsQuery } from "./ListClients.ts";
 export type { ListDepartments200, ListDepartmentsQueryResponse, ListDepartmentsQuery } from "./ListDepartments.ts";
 export type { ListEmployeesQueryParamsStatusEnum, ListEmployeesQueryParams, ListEmployees200, ListEmployeesQueryResponse, ListEmployeesQuery } from "./ListEmployees.ts";
@@ -84,6 +86,7 @@ export type { OpportunityRequestStageEnum, OpportunityRequest } from "./Opportun
 export type { OpportunityResponseStageEnum, OpportunityResponse } from "./OpportunityResponse.ts";
 export type { OpportunityStageRequestStageEnum, OpportunityStageRequest } from "./OpportunityStageRequest.ts";
 export type { OrganizationResponseStatusEnum, OrganizationResponseSubscriptionPlanEnum, OrganizationResponse } from "./OrganizationResponse.ts";
+export type { PageResponseAuditResponse } from "./PageResponseAuditResponse.ts";
 export type { PageResponseClientResponse } from "./PageResponseClientResponse.ts";
 export type { PageResponseEmployeeResponse } from "./PageResponseEmployeeResponse.ts";
 export type { PageResponseExpenseResponse } from "./PageResponseExpenseResponse.ts";
