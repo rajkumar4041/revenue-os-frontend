@@ -31,6 +31,7 @@ interface NavItem {
   label: string
   icon: LucideIcon
   permission?: string
+  anyOf?: string[]
 }
 
 interface NavGroup {
@@ -62,7 +63,7 @@ const NAV_GROUPS: NavGroup[] = [
     label: 'Time',
     items: [
       { to: '/timesheets', label: 'Timesheets', icon: Clock, permission: 'TIMESHEET_SUBMIT' },
-      { to: '/approvals', label: 'Approvals', icon: CheckCheck, permission: 'TIMESHEET_APPROVE' },
+      { to: '/approvals', label: 'Approvals', icon: CheckCheck, anyOf: ['TIMESHEET_APPROVE', 'REVENUE_MANAGE'] },
     ],
   },
   {
@@ -105,7 +106,12 @@ export default function AppLayout() {
 
   const visibleGroups = NAV_GROUPS.map((group) => ({
     ...group,
-    items: group.items.filter((item) => !item.permission || hasPermission(item.permission)),
+    items: group.items.filter(
+      (item) =>
+        (!item.permission && !item.anyOf) ||
+        (item.permission ? hasPermission(item.permission) : false) ||
+        (item.anyOf ? item.anyOf.some(hasPermission) : false),
+    ),
   })).filter((group) => group.items.length > 0)
 
   return (
