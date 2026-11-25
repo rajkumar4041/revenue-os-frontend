@@ -8,6 +8,7 @@ import {
   Clock,
   FileText,
   FolderKanban,
+  Receipt,
   LayoutDashboard,
   Network,
   Search,
@@ -57,7 +58,10 @@ const NAV_GROUPS: NavGroup[] = [
   },
   {
     label: 'Finance',
-    items: [{ to: '/invoices', label: 'Invoices', icon: FileText, permission: 'INVOICE_VIEW' }],
+    items: [
+      { to: '/invoices', label: 'Invoices', icon: FileText, permission: 'INVOICE_VIEW' },
+      { to: '/expenses', label: 'Expenses', icon: Receipt, permission: 'REVENUE_VIEW' },
+    ],
   },
   {
     label: 'People',
