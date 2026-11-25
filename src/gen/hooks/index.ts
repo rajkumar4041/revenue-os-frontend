@@ -43,6 +43,8 @@ export type { GetTimesheetQueryKey } from "./useGetTimesheet.ts";
 export type { GetTimesheetSuspenseQueryKey } from "./useGetTimesheetSuspense.ts";
 export type { GetUserQueryKey } from "./useGetUser.ts";
 export type { GetUserSuspenseQueryKey } from "./useGetUserSuspense.ts";
+export type { ListActivityQueryKey } from "./useListActivity.ts";
+export type { ListActivitySuspenseQueryKey } from "./useListActivitySuspense.ts";
 export type { ListClientsQueryKey } from "./useListClients.ts";
 export type { ListClientsSuspenseQueryKey } from "./useListClientsSuspense.ts";
 export type { ListDepartmentsQueryKey } from "./useListDepartments.ts";
@@ -149,6 +151,8 @@ export { getTimesheetQueryKey, getTimesheetQueryOptions, useGetTimesheet } from 
 export { getTimesheetSuspenseQueryKey, getTimesheetSuspenseQueryOptions, useGetTimesheetSuspense } from "./useGetTimesheetSuspense.ts";
 export { getUserQueryKey, getUserQueryOptions, useGetUser } from "./useGetUser.ts";
 export { getUserSuspenseQueryKey, getUserSuspenseQueryOptions, useGetUserSuspense } from "./useGetUserSuspense.ts";
+export { listActivityQueryKey, listActivityQueryOptions, useListActivity } from "./useListActivity.ts";
+export { listActivitySuspenseQueryKey, listActivitySuspenseQueryOptions, useListActivitySuspense } from "./useListActivitySuspense.ts";
 export { listClientsQueryKey, listClientsQueryOptions, useListClients } from "./useListClients.ts";
 export { listClientsSuspenseQueryKey, listClientsSuspenseQueryOptions, useListClientsSuspense } from "./useListClientsSuspense.ts";
 export { listDepartmentsQueryKey, listDepartmentsQueryOptions, useListDepartments } from "./useListDepartments.ts";
