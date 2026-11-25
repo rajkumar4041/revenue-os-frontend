@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { NavLink, Outlet } from 'react-router-dom'
 import {
+  Activity,
   Bell,
   Building2,
   CheckCheck,
@@ -42,7 +43,10 @@ interface NavGroup {
 const NAV_GROUPS: NavGroup[] = [
   {
     label: 'Overview',
-    items: [{ to: '/', label: 'Dashboard', icon: LayoutDashboard }],
+    items: [
+      { to: '/', label: 'Dashboard', icon: LayoutDashboard },
+      { to: '/activity', label: 'Activity', icon: Activity, permission: 'REPORT_VIEW' },
+    ],
   },
   {
     label: 'Sales',
