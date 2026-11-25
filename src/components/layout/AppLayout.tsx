@@ -13,7 +13,9 @@ import {
   Network,
   Search,
   ShieldCheck,
+  Target,
   UserCog,
+  UserPlus,
   Users,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
@@ -40,6 +42,13 @@ const NAV_GROUPS: NavGroup[] = [
   {
     label: 'Overview',
     items: [{ to: '/', label: 'Dashboard', icon: LayoutDashboard }],
+  },
+  {
+    label: 'Sales',
+    items: [
+      { to: '/leads', label: 'Leads', icon: UserPlus, permission: 'CLIENT_VIEW' },
+      { to: '/pipeline', label: 'Pipeline', icon: Target, permission: 'CLIENT_VIEW' },
+    ],
   },
   {
     label: 'Workspace',

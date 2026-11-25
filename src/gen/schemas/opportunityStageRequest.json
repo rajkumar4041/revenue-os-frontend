@@ -1,0 +1,1 @@
+{"required":["stage"],"type":"object","properties":{"stage":{"type":"string","enum":["QUALIFICATION","PROPOSAL","NEGOTIATION","WON","LOST"]}},"x-readme-ref-name":"OpportunityStageRequest"}
