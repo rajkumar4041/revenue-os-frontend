@@ -1,0 +1,1 @@
+{"type":"object","properties":{"endDate":{"type":"string","format":"date"}},"x-readme-ref-name":"OffboardEmployeeRequest"}
