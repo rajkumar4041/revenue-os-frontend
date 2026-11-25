@@ -1,0 +1,1 @@
+{"type":"object","properties":{"totalInvoiced":{"type":"number"},"totalCollected":{"type":"number"},"outstanding":{"type":"number"},"totalExpenses":{"type":"number"},"netProfit":{"type":"number"}},"x-readme-ref-name":"RevenueSummaryResponse"}
