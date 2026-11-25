@@ -1,0 +1,1 @@
+{"required":["status"],"type":"object","properties":{"status":{"type":"string","enum":["TODO","IN_PROGRESS","IN_REVIEW","BLOCKED","DONE"]}},"x-readme-ref-name":"UpdateTaskStatusRequest"}
