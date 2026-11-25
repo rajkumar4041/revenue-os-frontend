@@ -29,7 +29,7 @@ export type OnboardEmployeeRequest = {
     /**
      * @type string | undefined, uuid
     */
-    departmentId?: string;
+    teamId?: string;
     /**
      * @type string | undefined
     */

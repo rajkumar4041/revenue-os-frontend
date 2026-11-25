@@ -27,7 +27,7 @@ export function listEmployeesQueryOptions(params?: ListEmployeesQueryParams, con
 }
 
 /**
- * @summary List employees, optionally filtered by status and department
+ * @summary List employees, optionally filtered by status and team
  * {@link /api/v1/employees}
  */
 export function useListEmployees<TData = ListEmployeesQueryResponse, TQueryData = ListEmployeesQueryResponse, TQueryKey extends QueryKey = ListEmployeesQueryKey>(params?: ListEmployeesQueryParams, options: 

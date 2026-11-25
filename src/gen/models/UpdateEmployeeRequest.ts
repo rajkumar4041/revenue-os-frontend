@@ -35,7 +35,7 @@ export type UpdateEmployeeRequest = {
     /**
      * @type string | undefined, uuid
     */
-    departmentId?: string;
+    teamId?: string;
     /**
      * @type string | undefined
     */
