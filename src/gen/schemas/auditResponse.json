@@ -1,0 +1,1 @@
+{"type":"object","properties":{"id":{"type":"string","format":"uuid"},"action":{"type":"string"},"entityType":{"type":"string"},"entityId":{"type":"string","format":"uuid"},"userId":{"type":"string","format":"uuid"},"metadata":{"type":"string"},"createdAt":{"type":"string","format":"date-time"}},"x-readme-ref-name":"AuditResponse"}

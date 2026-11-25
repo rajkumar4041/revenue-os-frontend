@@ -32,6 +32,7 @@ export { getRole } from "./getRole.ts";
 export { getTask } from "./getTask.ts";
 export { getTimesheet } from "./getTimesheet.ts";
 export { getUser } from "./getUser.ts";
+export { listActivity } from "./listActivity.ts";
 export { listClients } from "./listClients.ts";
 export { listDepartments } from "./listDepartments.ts";
 export { listEmployees } from "./listEmployees.ts";
