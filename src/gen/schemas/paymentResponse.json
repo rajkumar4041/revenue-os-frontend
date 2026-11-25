@@ -1,0 +1,1 @@
+{"type":"object","properties":{"id":{"type":"string","format":"uuid"},"invoiceId":{"type":"string","format":"uuid"},"amount":{"type":"number"},"paidOn":{"type":"string","format":"date"},"method":{"type":"string","enum":["BANK_TRANSFER","CARD","CASH","CHEQUE","OTHER"]},"reference":{"type":"string"}},"x-readme-ref-name":"PaymentResponse"}

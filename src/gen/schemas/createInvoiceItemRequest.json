@@ -1,0 +1,1 @@
+{"required":["description","quantity","unitPrice"],"type":"object","properties":{"description":{"type":"string"},"quantity":{"type":"number"},"unitPrice":{"type":"number"}},"x-readme-ref-name":"CreateInvoiceItemRequest"}
