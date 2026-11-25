@@ -1,7 +1,9 @@
 import axios, { type AxiosRequestConfig } from 'axios'
 import { clearTokens, getAccessToken, getRefreshToken, setTokens } from './tokenStorage'
 
-const baseURL = `${import.meta.env.VITE_API_URL ?? ''}/api/v1`
+// Origin only — OpenAPI paths already include the /api/v1 prefix, and the
+// hand-written auth calls spell it out too. Empty VITE_API_URL uses the dev proxy.
+const baseURL = import.meta.env.VITE_API_URL ?? ''
 
 export const api = axios.create({
   baseURL,
@@ -23,7 +25,7 @@ async function refreshAccessToken(): Promise<string | null> {
   const refreshToken = getRefreshToken()
   if (!refreshToken) return null
   try {
-    const { data } = await axios.post(`${baseURL}/auth/refresh`, { refreshToken })
+    const { data } = await axios.post(`${baseURL}/api/v1/auth/refresh`, { refreshToken })
     setTokens(data.accessToken, data.refreshToken)
     return data.accessToken
   } catch {

@@ -1,0 +1,1 @@
+{"type":"object","properties":{"id":{"type":"string","format":"uuid"},"name":{"type":"string"},"slug":{"type":"string"},"status":{"type":"string","enum":["ACTIVE","SUSPENDED"]},"subscriptionPlan":{"type":"string","enum":["FREE","STARTER","GROWTH","ENTERPRISE"]}},"x-readme-ref-name":"OrganizationResponse"}
