@@ -76,6 +76,8 @@ export type { LoginRequest } from "./LoginRequest.ts";
 export type { Logout200, LogoutMutationRequest, LogoutMutationResponse, LogoutMutation } from "./Logout.ts";
 export type { LogoutRequest } from "./LogoutRequest.ts";
 export type { MessageResponse } from "./MessageResponse.ts";
+export type { MonthlyRevenueQueryParams, MonthlyRevenue200, MonthlyRevenueQueryResponse, MonthlyRevenueQuery } from "./MonthlyRevenue.ts";
+export type { MonthlyRevenuePoint } from "./MonthlyRevenuePoint.ts";
 export type { MyTimesheets200, MyTimesheetsQueryResponse, MyTimesheetsQuery } from "./MyTimesheets.ts";
 export type { OffboardEmployeePathParams, OffboardEmployee200, OffboardEmployeeMutationRequest, OffboardEmployeeMutationResponse, OffboardEmployeeMutation } from "./OffboardEmployee.ts";
 export type { OffboardEmployeeRequest } from "./OffboardEmployeeRequest.ts";
@@ -107,6 +109,8 @@ export type { RejectExpensePathParams, RejectExpense200, RejectExpenseMutationRe
 export type { RejectTimesheetPathParams, RejectTimesheet200, RejectTimesheetMutationRequest, RejectTimesheetMutationResponse, RejectTimesheetMutation } from "./RejectTimesheet.ts";
 export type { ResetPassword200, ResetPasswordMutationRequest, ResetPasswordMutationResponse, ResetPasswordMutation } from "./ResetPassword.ts";
 export type { ResetPasswordRequest } from "./ResetPasswordRequest.ts";
+export type { RevenueSummary200, RevenueSummaryQueryResponse, RevenueSummaryQuery } from "./RevenueSummary.ts";
+export type { RevenueSummaryResponse } from "./RevenueSummaryResponse.ts";
 export type { ReviewRequest } from "./ReviewRequest.ts";
 export type { RoleResponse } from "./RoleResponse.ts";
 export type { SendInvoicePathParams, SendInvoice200, SendInvoiceMutationResponse, SendInvoiceMutation } from "./SendInvoice.ts";

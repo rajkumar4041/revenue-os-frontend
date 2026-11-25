@@ -1,0 +1,1 @@
+{"type":"object","properties":{"month":{"type":"string"},"invoiced":{"type":"number"},"collected":{"type":"number"}},"x-readme-ref-name":"MonthlyRevenuePoint"}
