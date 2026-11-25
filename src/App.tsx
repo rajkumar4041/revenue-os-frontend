@@ -12,6 +12,8 @@ import TimesheetsPage from '@/features/timesheets/TimesheetsPage'
 import ApprovalsPage from '@/features/timesheets/ApprovalsPage'
 import InvoicesPage from '@/features/invoices/InvoicesPage'
 import ExpensesPage from '@/features/expenses/ExpensesPage'
+import LeadsPage from '@/features/sales/LeadsPage'
+import OpportunitiesPage from '@/features/sales/OpportunitiesPage'
 import AppLayout from '@/components/layout/AppLayout'
 import ProtectedRoute from '@/routes/ProtectedRoute'
 
@@ -22,6 +24,8 @@ export default function App() {
       <Route element={<ProtectedRoute />}>
         <Route element={<AppLayout />}>
           <Route path="/" element={<DashboardPage />} />
+          <Route path="/leads" element={<LeadsPage />} />
+          <Route path="/pipeline" element={<OpportunitiesPage />} />
           <Route path="/clients" element={<ClientsPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/tasks" element={<TasksPage />} />
