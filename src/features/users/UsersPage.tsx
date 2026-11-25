@@ -1,8 +1,11 @@
-import { Loader2 } from 'lucide-react'
+import { useState } from 'react'
+import { Loader2, Plus } from 'lucide-react'
 import { useListUsers } from '@/gen/hooks'
 import type { UserResponse, UserResponseStatusEnum } from '@/gen/models/UserResponse'
 import { useAuth } from '@/store/auth'
 import { Badge, type BadgeProps } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { CreateUserDialog } from './CreateUserDialog'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import {
   Table,
@@ -22,6 +25,7 @@ const STATUS_VARIANT: Record<UserResponseStatusEnum, BadgeProps['variant']> = {
 export default function UsersPage() {
   const { hasPermission } = useAuth()
   const canManage = hasPermission('USER_MANAGE')
+  const [createOpen, setCreateOpen] = useState(false)
 
   // Generated TanStack Query hook — fetches /api/v1/users through our axios client.
   const { data, isLoading, isError } = useListUsers(
@@ -37,10 +41,18 @@ export default function UsersPage() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl font-semibold tracking-tight">Users</h1>
-        <p className="text-sm text-muted-foreground">Everyone in your organization.</p>
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-2xl font-semibold tracking-tight">Users</h1>
+          <p className="text-sm text-muted-foreground">Everyone in your organization.</p>
+        </div>
+        <Button onClick={() => setCreateOpen(true)}>
+          <Plus className="h-4 w-4" />
+          New user
+        </Button>
       </div>
+
+      <CreateUserDialog open={createOpen} onOpenChange={setCreateOpen} />
 
       <Card>
         <CardContent className="p-0">
