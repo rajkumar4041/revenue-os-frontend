@@ -10,13 +10,7 @@ import { setTokens } from '@/lib/tokenStorage'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
+import { AuthLayout, OrDivider, SocialButtons } from './AuthLayout'
 
 const schema = z.object({
   email: z.string().min(1, 'Email is required').email('Enter a valid email'),
@@ -58,60 +52,52 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-muted/40 px-4">
-      <Card className="w-full max-w-md">
-        <CardHeader className="space-y-2 text-center">
-          <CardTitle>RevenueOS</CardTitle>
-          <CardDescription>Sign in to your workspace</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
-            <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                autoComplete="email"
-                placeholder="you@company.com"
-                {...register('email')}
-              />
-              {errors.email && <p className="text-sm text-destructive">{errors.email.message}</p>}
-            </div>
+    <AuthLayout>
+      <div className="mb-6">
+        <h1 className="text-2xl font-semibold tracking-tight">Sign in</h1>
+        <p className="text-sm text-muted-foreground">Welcome back — let’s get to work.</p>
+      </div>
 
-            <div className="space-y-2">
-              <div className="flex items-center justify-between">
-                <Label htmlFor="password">Password</Label>
-                <Link to="/forgot-password" className="text-xs text-muted-foreground hover:text-foreground">
-                  Forgot password?
-                </Link>
-              </div>
-              <Input
-                id="password"
-                type="password"
-                autoComplete="current-password"
-                placeholder="••••••••"
-                {...register('password')}
-              />
-              {errors.password && (
-                <p className="text-sm text-destructive">{errors.password.message}</p>
-              )}
-            </div>
+      <SocialButtons />
+      <div className="my-4">
+        <OrDivider />
+      </div>
 
-            {loginMutation.isError && (
-              <p className="text-sm text-destructive">{errorMessage(loginMutation.error)}</p>
-            )}
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
+        <div className="space-y-2">
+          <Label htmlFor="email">Work email</Label>
+          <Input id="email" type="email" placeholder="you@company.com" autoComplete="email" {...register('email')} />
+          {errors.email && <p className="text-sm text-destructive">{errors.email.message}</p>}
+        </div>
 
-            <Button type="submit" className="w-full" disabled={loginMutation.isPending}>
-              {loginMutation.isPending && <Loader2 className="h-4 w-4 animate-spin" />}
-              Sign in
-            </Button>
-          </form>
+        <div className="space-y-2">
+          <div className="flex items-center justify-between">
+            <Label htmlFor="password">Password</Label>
+            <Link to="/forgot-password" className="text-xs text-muted-foreground hover:text-foreground">
+              Forgot password?
+            </Link>
+          </div>
+          <Input id="password" type="password" placeholder="••••••••" autoComplete="current-password" {...register('password')} />
+          {errors.password && <p className="text-sm text-destructive">{errors.password.message}</p>}
+        </div>
 
-          <p className="mt-6 rounded-md bg-muted px-3 py-2 text-center text-xs text-muted-foreground">
-            Demo account — admin@demo.io / Password123!
-          </p>
-        </CardContent>
-      </Card>
-    </div>
+        {loginMutation.isError && (
+          <p className="text-sm text-destructive">{errorMessage(loginMutation.error)}</p>
+        )}
+
+        <Button type="submit" className="w-full" disabled={loginMutation.isPending}>
+          {loginMutation.isPending && <Loader2 className="h-4 w-4 animate-spin" />}
+          Sign in
+        </Button>
+      </form>
+
+      <p className="mt-6 text-sm text-muted-foreground">
+        New to RevenueOS?{' '}
+        <Link to="/register" className="font-medium text-primary hover:underline">
+          Start your 20-day trial
+        </Link>
+      </p>
+      <p className="mt-2 text-xs text-muted-foreground">Demo — admin@demo.io / Password123!</p>
+    </AuthLayout>
   )
 }

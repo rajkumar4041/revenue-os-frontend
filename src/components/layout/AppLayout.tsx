@@ -26,6 +26,7 @@ import { Button } from '@/components/ui/button'
 import { ThemeToggle } from './ThemeToggle'
 import { UserMenu } from './UserMenu'
 import { CommandPalette } from './CommandPalette'
+import { TrialBanner } from './TrialBanner'
 
 interface NavItem {
   to: string
@@ -190,6 +191,7 @@ export default function AppLayout() {
         </header>
 
         <main className="flex-1 p-5 lg:p-8">
+          <TrialBanner />
           <Outlet />
         </main>
       </div>
