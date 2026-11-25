@@ -1,5 +1,5 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
-import { LayoutDashboard, LogOut, ShieldCheck, Users } from 'lucide-react'
+import { Building2, LayoutDashboard, LogOut, ShieldCheck, Users } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { useAuth } from '@/store/auth'
 import { logoutRequest } from '@/api/auth'
@@ -16,6 +16,7 @@ interface NavItem {
 
 const NAV: NavItem[] = [
   { to: '/', label: 'Dashboard', icon: LayoutDashboard },
+  { to: '/clients', label: 'Clients', icon: Building2, permission: 'CLIENT_VIEW' },
   { to: '/users', label: 'Users', icon: Users, permission: 'USER_MANAGE' },
   { to: '/roles', label: 'Roles', icon: ShieldCheck, permission: 'ROLE_MANAGE' },
 ]
