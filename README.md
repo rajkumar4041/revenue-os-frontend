@@ -2,6 +2,18 @@
 
 React + TypeScript frontend for RevenueOS.
 
+## 🚀 Live demo
+
+**https://revenue-os.vercel.app** &nbsp;·&nbsp; sign in with the demo account:
+
+| Email | Password |
+| ----- | -------- |
+| `admin@demo.io` | `Password123!` |
+
+> Replace the URL above with your deployed Vercel link. The backend is a free
+> Render service that may cold-start (~30–60 s) on the first request after idle.
+> See [`DEPLOYMENT.md`](https://github.com/rajkumar4041/revenue-os-backend/blob/main/DEPLOYMENT.md) to deploy your own.
+
 ## Stack
 
 - React 18, TypeScript, Vite
