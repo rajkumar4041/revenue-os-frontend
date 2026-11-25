@@ -5,8 +5,10 @@ import {
   CheckSquare,
   FolderKanban,
   LayoutDashboard,
+  Network,
   Search,
   ShieldCheck,
+  UserCog,
   Users,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
@@ -39,6 +41,13 @@ const NAV_GROUPS: NavGroup[] = [
       { to: '/clients', label: 'Clients', icon: Building2, permission: 'CLIENT_VIEW' },
       { to: '/projects', label: 'Projects', icon: FolderKanban, permission: 'PROJECT_VIEW' },
       { to: '/tasks', label: 'Tasks', icon: CheckSquare, permission: 'TASK_VIEW' },
+    ],
+  },
+  {
+    label: 'People',
+    items: [
+      { to: '/employees', label: 'Employees', icon: UserCog, permission: 'EMPLOYEE_VIEW' },
+      { to: '/departments', label: 'Departments', icon: Network, permission: 'EMPLOYEE_VIEW' },
     ],
   },
   {
