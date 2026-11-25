@@ -1,6 +1,7 @@
 export type { ActiveTimer200, ActiveTimerQueryResponse, ActiveTimerQuery } from "./ActiveTimer.ts";
 export type { AddTimeEntryPathParams, AddTimeEntry200, AddTimeEntryMutationRequest, AddTimeEntryMutationResponse, AddTimeEntryMutation } from "./AddTimeEntry.ts";
 export type { AddTimeEntryRequest } from "./AddTimeEntryRequest.ts";
+export type { ApproveExpensePathParams, ApproveExpense200, ApproveExpenseMutationResponse, ApproveExpenseMutation } from "./ApproveExpense.ts";
 export type { ApproveTimesheetPathParams, ApproveTimesheet200, ApproveTimesheetMutationResponse, ApproveTimesheetMutation } from "./ApproveTimesheet.ts";
 export type { ArchiveClientPathParams, ArchiveClient200, ArchiveClientMutationResponse, ArchiveClientMutation } from "./ArchiveClient.ts";
 export type { AssignRolesRequest } from "./AssignRolesRequest.ts";
@@ -12,6 +13,8 @@ export type { CreateClient200, CreateClientMutationRequest, CreateClientMutation
 export type { CreateClientRequestClientTypeEnum, CreateClientRequestStatusEnum, CreateClientRequest } from "./CreateClientRequest.ts";
 export type { CreateDepartment200, CreateDepartmentMutationRequest, CreateDepartmentMutationResponse, CreateDepartmentMutation } from "./CreateDepartment.ts";
 export type { CreateDepartmentRequest } from "./CreateDepartmentRequest.ts";
+export type { CreateExpense200, CreateExpenseMutationRequest, CreateExpenseMutationResponse, CreateExpenseMutation } from "./CreateExpense.ts";
+export type { CreateExpenseRequestCategoryEnum, CreateExpenseRequest } from "./CreateExpenseRequest.ts";
 export type { CreateInvoice200, CreateInvoiceMutationRequest, CreateInvoiceMutationResponse, CreateInvoiceMutation } from "./CreateInvoice.ts";
 export type { CreateInvoiceItemRequest } from "./CreateInvoiceItemRequest.ts";
 export type { CreateInvoiceRequest } from "./CreateInvoiceRequest.ts";
@@ -24,11 +27,13 @@ export type { CreateTaskRequestPriorityEnum, CreateTaskRequestStatusEnum, Create
 export type { CreateUser200, CreateUserMutationRequest, CreateUserMutationResponse, CreateUserMutation } from "./CreateUser.ts";
 export type { CreateUserRequest } from "./CreateUserRequest.ts";
 export type { DeleteDepartmentPathParams, DeleteDepartment200, DeleteDepartmentMutationResponse, DeleteDepartmentMutation } from "./DeleteDepartment.ts";
+export type { DeleteExpensePathParams, DeleteExpense200, DeleteExpenseMutationResponse, DeleteExpenseMutation } from "./DeleteExpense.ts";
 export type { DeleteProjectPathParams, DeleteProject200, DeleteProjectMutationResponse, DeleteProjectMutation } from "./DeleteProject.ts";
 export type { DeleteRolePathParams, DeleteRole200, DeleteRoleMutationResponse, DeleteRoleMutation } from "./DeleteRole.ts";
 export type { DeleteTimeEntryPathParams, DeleteTimeEntry200, DeleteTimeEntryMutationResponse, DeleteTimeEntryMutation } from "./DeleteTimeEntry.ts";
 export type { DepartmentResponse } from "./DepartmentResponse.ts";
 export type { EmployeeResponseEmploymentTypeEnum, EmployeeResponseEmploymentStatusEnum, EmployeeResponse } from "./EmployeeResponse.ts";
+export type { ExpenseResponseCategoryEnum, ExpenseResponseStatusEnum, ExpenseResponse } from "./ExpenseResponse.ts";
 export type { ForgotPassword200, ForgotPasswordMutationRequest, ForgotPasswordMutationResponse, ForgotPasswordMutation } from "./ForgotPassword.ts";
 export type { ForgotPasswordRequest } from "./ForgotPasswordRequest.ts";
 export type { ForgotPasswordResponse } from "./ForgotPasswordResponse.ts";
@@ -48,6 +53,7 @@ export type { InvoiceResponseStatusEnum, InvoiceResponse } from "./InvoiceRespon
 export type { ListClientsQueryParams, ListClients200, ListClientsQueryResponse, ListClientsQuery } from "./ListClients.ts";
 export type { ListDepartments200, ListDepartmentsQueryResponse, ListDepartmentsQuery } from "./ListDepartments.ts";
 export type { ListEmployeesQueryParamsStatusEnum, ListEmployeesQueryParams, ListEmployees200, ListEmployeesQueryResponse, ListEmployeesQuery } from "./ListEmployees.ts";
+export type { ListExpensesQueryParamsStatusEnum, ListExpensesQueryParams, ListExpenses200, ListExpensesQueryResponse, ListExpensesQuery } from "./ListExpenses.ts";
 export type { ListInvoicesQueryParamsStatusEnum, ListInvoicesQueryParams, ListInvoices200, ListInvoicesQueryResponse, ListInvoicesQuery } from "./ListInvoices.ts";
 export type { ListMyTasks200, ListMyTasksQueryResponse, ListMyTasksQuery } from "./ListMyTasks.ts";
 export type { ListPermissions200, ListPermissionsQueryResponse, ListPermissionsQuery } from "./ListPermissions.ts";
@@ -69,6 +75,7 @@ export type { OpenCurrentTimesheet200, OpenCurrentTimesheetMutationResponse, Ope
 export type { OrganizationResponseStatusEnum, OrganizationResponseSubscriptionPlanEnum, OrganizationResponse } from "./OrganizationResponse.ts";
 export type { PageResponseClientResponse } from "./PageResponseClientResponse.ts";
 export type { PageResponseEmployeeResponse } from "./PageResponseEmployeeResponse.ts";
+export type { PageResponseExpenseResponse } from "./PageResponseExpenseResponse.ts";
 export type { PageResponseInvoiceResponse } from "./PageResponseInvoiceResponse.ts";
 export type { PageResponseProjectResponse } from "./PageResponseProjectResponse.ts";
 export type { PageResponseUserResponse } from "./PageResponseUserResponse.ts";
@@ -81,6 +88,7 @@ export type { RecordPaymentRequestMethodEnum, RecordPaymentRequest } from "./Rec
 export type { RefreshToken200, RefreshTokenMutationRequest, RefreshTokenMutationResponse, RefreshTokenMutation } from "./RefreshToken.ts";
 export type { RegisterCompany200, RegisterCompanyMutationRequest, RegisterCompanyMutationResponse, RegisterCompanyMutation } from "./RegisterCompany.ts";
 export type { RegisterCompanyRequest } from "./RegisterCompanyRequest.ts";
+export type { RejectExpensePathParams, RejectExpense200, RejectExpenseMutationResponse, RejectExpenseMutation } from "./RejectExpense.ts";
 export type { RejectTimesheetPathParams, RejectTimesheet200, RejectTimesheetMutationRequest, RejectTimesheetMutationResponse, RejectTimesheetMutation } from "./RejectTimesheet.ts";
 export type { ResetPassword200, ResetPasswordMutationRequest, ResetPasswordMutationResponse, ResetPasswordMutation } from "./ResetPassword.ts";
 export type { ResetPasswordRequest } from "./ResetPasswordRequest.ts";
@@ -102,6 +110,8 @@ export type { UpdateDepartmentPathParams, UpdateDepartment200, UpdateDepartmentM
 export type { UpdateDepartmentRequest } from "./UpdateDepartmentRequest.ts";
 export type { UpdateEmployeePathParams, UpdateEmployee200, UpdateEmployeeMutationRequest, UpdateEmployeeMutationResponse, UpdateEmployeeMutation } from "./UpdateEmployee.ts";
 export type { UpdateEmployeeRequestEmploymentTypeEnum, UpdateEmployeeRequestEmploymentStatusEnum, UpdateEmployeeRequest } from "./UpdateEmployeeRequest.ts";
+export type { UpdateExpensePathParams, UpdateExpense200, UpdateExpenseMutationRequest, UpdateExpenseMutationResponse, UpdateExpenseMutation } from "./UpdateExpense.ts";
+export type { UpdateExpenseRequestCategoryEnum, UpdateExpenseRequest } from "./UpdateExpenseRequest.ts";
 export type { UpdateInvoicePathParams, UpdateInvoice200, UpdateInvoiceMutationRequest, UpdateInvoiceMutationResponse, UpdateInvoiceMutation } from "./UpdateInvoice.ts";
 export type { UpdateInvoiceRequest } from "./UpdateInvoiceRequest.ts";
 export type { UpdateOrganizationPathParams, UpdateOrganization200, UpdateOrganizationMutationRequest, UpdateOrganizationMutationResponse, UpdateOrganizationMutation } from "./UpdateOrganization.ts";
@@ -120,11 +130,14 @@ export type { UserResponseStatusEnum, UserResponse } from "./UserResponse.ts";
 export type { VoidInvoicePathParams, VoidInvoice200, VoidInvoiceMutationResponse, VoidInvoiceMutation } from "./VoidInvoice.ts";
 export { clientResponseClientTypeEnum, clientResponseStatusEnum } from "./ClientResponse.ts";
 export { createClientRequestClientTypeEnum, createClientRequestStatusEnum } from "./CreateClientRequest.ts";
+export { createExpenseRequestCategoryEnum } from "./CreateExpenseRequest.ts";
 export { createProjectRequestBillingTypeEnum, createProjectRequestStatusEnum, createProjectRequestPriorityEnum } from "./CreateProjectRequest.ts";
 export { createTaskRequestPriorityEnum, createTaskRequestStatusEnum } from "./CreateTaskRequest.ts";
 export { employeeResponseEmploymentTypeEnum, employeeResponseEmploymentStatusEnum } from "./EmployeeResponse.ts";
+export { expenseResponseCategoryEnum, expenseResponseStatusEnum } from "./ExpenseResponse.ts";
 export { invoiceResponseStatusEnum } from "./InvoiceResponse.ts";
 export { listEmployeesQueryParamsStatusEnum } from "./ListEmployees.ts";
+export { listExpensesQueryParamsStatusEnum } from "./ListExpenses.ts";
 export { listInvoicesQueryParamsStatusEnum } from "./ListInvoices.ts";
 export { listTasksQueryParamsStatusEnum } from "./ListTasks.ts";
 export { onboardEmployeeRequestEmploymentTypeEnum } from "./OnboardEmployeeRequest.ts";
@@ -136,6 +149,7 @@ export { taskResponsePriorityEnum, taskResponseStatusEnum } from "./TaskResponse
 export { timesheetResponseStatusEnum } from "./TimesheetResponse.ts";
 export { updateClientRequestClientTypeEnum, updateClientRequestStatusEnum } from "./UpdateClientRequest.ts";
 export { updateEmployeeRequestEmploymentTypeEnum, updateEmployeeRequestEmploymentStatusEnum } from "./UpdateEmployeeRequest.ts";
+export { updateExpenseRequestCategoryEnum } from "./UpdateExpenseRequest.ts";
 export { updateProjectRequestBillingTypeEnum, updateProjectRequestStatusEnum, updateProjectRequestPriorityEnum } from "./UpdateProjectRequest.ts";
 export { updateTaskRequestPriorityEnum, updateTaskRequestStatusEnum } from "./UpdateTaskRequest.ts";
 export { updateTaskStatusRequestStatusEnum } from "./UpdateTaskStatusRequest.ts";
